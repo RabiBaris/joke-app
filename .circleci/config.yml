@@ -29,4 +29,14 @@ workflows:
             branches:
               only:
                 - circleci
-                
+
+      - docker/publish:
+          image: "rabi17/joke-api:lastest"
+          docker-username: "rabi17"
+          requires:
+            - "node/run"
+            - "node/test"
+          filters:
+            branches:
+              only:
+                - circleci
