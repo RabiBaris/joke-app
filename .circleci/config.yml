@@ -33,7 +33,6 @@ workflows:
 
       - docker/publish:
           image: "rabi17/joke-api:lastest"
-          docker-username: "rabi17"
           requires:
             - "node/run"
             - "node/test"
