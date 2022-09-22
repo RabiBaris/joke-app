@@ -24,7 +24,7 @@ workflows:
           requires:
             - "node/run"
             - "node/test"
-          app-name: "joke-app-5iw4"
+          app-name: "joke-app-5iw4-2"
           filters:
             branches:
               only:
