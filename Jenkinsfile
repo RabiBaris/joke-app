@@ -13,7 +13,7 @@ pipeline {
     stage('build-test') {
       when {
         expression {
-          BRANCH_NAME == 'main'
+          BRANCH_NAME == 'jenkins'
         }
       }
       steps {
@@ -44,7 +44,6 @@ pipeline {
         }
 
         withCredentials([usernamePassword(credentialsId: 'herokuId', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-            // sh "echo ${USERNAME}  echo ${PASSWORD} | heroku login"
             sh "HEROKU_API_KEY=${PASSWORD} npx heroku container:release web --app=joke-app-5iw4-3"
         }
       }
